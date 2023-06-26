@@ -1,8 +1,16 @@
 #!/usr/bin/python3
 
-def safe_print_integer(value):
+def safe_print_list(my_list=[], x=0):
     try:
-        print("{:d}".format(value))
-        return (True)
-    except (TypeError, ValueError):
-        return (False)
+        count = 0
+        for item in my_list:
+            if count < x:
+                print(item, end="")
+                count += 1
+            else:
+                break
+        print()
+        return count
+    except:
+        print("An error occurred.")
+        return count
